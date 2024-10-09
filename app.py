@@ -9,8 +9,19 @@ c = conn.cursor()
 #           pay integer)
 # """)
 
+# c.execute("""
+#     ALTER TABLE employees ADD pay integer
+# """)
+
+# c.execute("""
+#     INSERT INTO employees VALUES ("Arjun", "Panicker",20000)    
+# """)
 c.execute("""
-    ALTER TABLE employees ADD pay integer
+    SELECT * FROM employees WHERE last='Panicker'
 """)
+# print(c.fetchone())
+print(c.fetchall())
+# c.fetchmany(5) #fetch
+# c.fetchall()
 conn.commit() #commits the current transaction to the database
 conn.close() #close the connection
